@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+
+html {
+  background-image: radial-gradient(circle farthest-corner at center, #000000 0%, #120e29 100%);
+  height: 100%;
+}
+
+h1{
+    color: aliceblue;
+    text-align: center;
+    margin-top: 12%;
+    text-shadow: red -3px 0, cyan 3px 0;
+}
+
+.spinner {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  top: calc(50% - 64px);
+  left: calc(50% - 64px);
+  transform: perspective(206px) rotateX(45deg);
+}
+
+.outer {
+  box-sizing: border-box;
+  animation: spin 3s linear infinite;
+  height: 100%;
+}
+
+.inner {
+  position: absolute;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  animation: spin 1.8s ease-in-out infinite;
+  
+  &.tl {
+    top: 0;
+    left: 0;
+    border-top: 4px solid #2600ff;
+    border-left: 6px solid #2600ff;
+  }
+  &.tr {
+    top: 0;
+    right: 0;
+    border-top: 4px solid #49e0b8;
+    border-right: 6px solid #49e0b8;
+  }
+  &.br {
+    bottom: 0;
+    right: 0;
+    border-bottom: 4px solid #ff0374;
+    border-right: 6px solid #ff0374;
+  }
+  &.bl {
+    bottom: 0;
+    left: 0;
+    border-bottom: 4px solid #f90025;
+    border-left: 6px solid #f90025;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
+
+
+
+<h1>Amazing CSS Loader
+</h1>
+    <div class="spinner">
+        <div class="outer">
+          <div class="inner tl"></div>
+          <div class="inner tr"></div>
+          <div class="inner br"></div>
+          <div class="inner bl"></div>
+        </div>
+      </div>
+</body>
+</html>
